@@ -7,5 +7,34 @@
 body{
     height: 100vh;
     display: flex;
-    background: black;
+    background: rgb(255, 0, 0);
+}
+
+.memory-game{
+    width: 640px;
+    height: 640;
+    margin: auto;
+    display: flex;
+    flex-wrap:wrap;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333%  - 10%);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5px;
+    box-shadow: 1px 1px 1px blue;
+}
+
+.memory-card:active {
+    transitiom: scale(0.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: scaleY(180deg);
 }
